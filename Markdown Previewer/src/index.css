@@ -1,0 +1,175 @@
+:root {
+  --dark-color: #224b4b;
+  --light-color: #2cda9d;
+  --background: #619e9e;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --transition: all 300ms linear;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #90bbbb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.15rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 1.75rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+.editor-section {
+  width: 85vw;
+  max-width: 650px;
+  margin: 1rem auto;
+  box-shadow: var(--dark-shadow);
+}
+
+.previewer-section {
+  width: 90vw;
+  max-width: 750px;
+  margin: 1.5rem auto;
+  box-shadow: var(--dark-shadow);
+}
+
+header {
+  background: #4e7e7e;
+  font-weight: bold;
+  padding: 0.5rem;
+  box-shadow: var(--light-shadow);
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.icon:hover {
+  color: var(--light-color);
+}
+
+#editor {
+  display: block;
+  background: #d0e2e2;
+  width: 100%;
+  padding: 1rem;
+}
+
+#preview {
+  display: block;
+  background: #d0e2e2;
+  width: 100%;
+  padding: 1rem;
+}
+
+.full-screen {
+  min-height: calc(100vh - 4.5rem);
+}
+
+.non-full-screen {
+  min-height: 10rem;
+}
+
+img {
+  width: 90%;
+  object-fit: cover;
+  display: block;
+  margin: 3rem auto 1rem auto;
+}
+
+code {
+  display: inline-block;
+  background: white;
+  padding: 0.5rem;
+  max-width: 100%;
+  overflow: auto;
+}
+
+blockquote {
+  display: inline-block;
+  margin-left: 1.5rem;
+  color: var(--dark-color);
+  border-left: 3px solid var(--dark-color);
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 2px solid var(--dark-color);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+ul,
+ol {
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,250 @@
+:root {
+  --primary-01: hsl(21, 91%, 17%);
+  --primary-02: hsl(21, 84%, 25%);
+  --primary-03: hsl(21, 81%, 29%);
+  --primary-04: hsl(21, 77%, 34%);
+  --primary-05: hsl(21, 62%, 45%);
+  --primary-06: hsl(21, 57%, 50%);
+  --primary-07: hsl(21, 65%, 59%);
+  --primary-08: hsl(21, 80%, 74%);
+  --primary-09: hsl(21, 94%, 87%);
+  --primary-10: hsl(21, 100%, 94%);
+  --grey-01: hsl(209, 61%, 16%);
+  --grey-02: hsl(211, 39%, 23%);
+  --grey-03: hsl(209, 34%, 30%);
+  --grey-04: hsl(209, 28%, 39%);
+  --grey-05: hsl(210, 22%, 49%);
+  --grey-06: hsl(209, 23%, 60%);
+  --grey-07: hsl(211, 27%, 70%);
+  --grey-08: hsl(210, 31%, 80%);
+  --grey-09: hsl(212, 33%, 89%);
+  --grey-10: hsl(210, 36%, 96%);
+  --transition: all 0.3s linear;
+  --letter-spacing: 0.1rem;
+  --border-radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--grey-10);
+  color: var(--grey-01);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--letter-spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--grey-05);
+}
+
+main {
+  width: 90vw;
+  margin: 5rem auto;
+  max-width: 1200px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.title span {
+  font-size: 0.85em;
+  color: var(--primary-05);
+  margin-right: 1rem;
+  font-weight: 700;
+}
+
+.reviews-container {
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: 80vw;
+  height: 450px;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.person-image {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid var(--grey-08);
+  box-shadow: var(--dark-shadow);
+}
+
+article h4 {
+  text-transform: uppercase;
+  color: var(--primary-05);
+  margin-bottom: 0.25rem;
+}
+
+.title {
+  text-transform: capitalize;
+  margin-bottom: 0.75rem;
+  color: var(--grey-03);
+}
+
+.text {
+  max-width: 35em;
+  margin: 0 auto;
+  margin-top: 2rem;
+  line-height: 2;
+  color: var(--grey-05);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-top: 1rem;
+  color: var(--primary-05);
+}
+
+.previous-button,
+.next-button {
+  position: absolute;
+  top: 200px;
+  transform: translateY(-50%);
+  background: var(--grey-05);
+  color: white;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: grid;
+  place-items: center;
+  border-color: transparent;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.previous-button:hover,
+.next-button:hover {
+  background: var(--primary-05);
+}
+
+.previous-button {
+  left: 0;
+}
+.next-button {
+  right: 0;
+}
+
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+article.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+article.last {
+  transform: translateX(-100%);
+}
+
+article.next {
+  transform: translateX(100%);
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .text {
+    max-width: 45em;
+  }
+  .previous-button,
+  .next-button {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+  }
+}
